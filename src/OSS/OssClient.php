@@ -1729,7 +1729,7 @@ class OssClient
      *)
      * Prefix and marker are for filtering and paging. Their length must be less than 256 bytes
      * @throws OssException
-     * @return ObjectListInfo
+     * @return ObjectVersionListInfo
      */
     public function listObjectVersions($bucket, $options = NULL)
     {
@@ -1742,7 +1742,7 @@ class OssClient
         $options[self::OSS_QUERY_STRING] = array_merge(
             $query,
             array(self::OSS_ENCODING_TYPE => self::OSS_ENCODING_TYPE_URL,
-                  self::OSS_DELIMITER => isset($options[self::OSS_DELIMITER]) ? $options[self::OSS_DELIMITER] : '/',
+                  self::OSS_DELIMITER => isset($options[self::OSS_DELIMITER]) ? $options[self::OSS_DELIMITER] : '',
                   self::OSS_PREFIX => isset($options[self::OSS_PREFIX]) ? $options[self::OSS_PREFIX] : '',
                   self::OSS_MAX_KEYS => isset($options[self::OSS_MAX_KEYS]) ? $options[self::OSS_MAX_KEYS] : self::OSS_MAX_KEYS_VALUE,
                   self::OSS_KEY_MARKER => isset($options[self::OSS_KEY_MARKER]) ? $options[self::OSS_KEY_MARKER] : '',

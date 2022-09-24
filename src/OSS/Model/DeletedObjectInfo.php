@@ -16,7 +16,7 @@ class DeletedObjectInfo
      * @param string $deleteMarker
      * @param string $deleteMarkerVersionId
      */
-    public function __construct($key, $versionId, $deleteMarker, $deleteMarkerVersionId)
+    public function __construct($key, $versionId, $deleteMarker="", $deleteMarkerVersionId="")
     {
         $this->key = $key;
         $this->versionId = $versionId;
