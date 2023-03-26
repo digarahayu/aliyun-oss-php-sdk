@@ -9,26 +9,8 @@ require_once __DIR__ . '/Common.php';
 
 use OSS\OssClient;
 use OSS\Core\OssException;
-use OSS\Credentials\CredentialsProvider;
 use AlibabaCloud\Credentials\Credential;
-use OSS\Credentials\StaticCredentialsProvider;
-
-// public provider conversion class
-class AlibabaCloudCredentialsWrapper implements CredentialsProvider{
-    /**
-     * @var Credential
-     */
-    private $warpper;
-    public function __construct($credential){
-        $this->warpper = $credential;
-    }
-    public function getCredentials(){
-        $ak = $this->warpper->getAccessKeyId();
-        $sk = $this->warpper->getAccessKeySecret();
-        $token = $this->warpper->getSecurityToken();
-        return new StaticCredentialsProvider($ak, $sk, $token);
-    }
-}
+use OSS\Credentials\AlibabaCloudCredentialsWrapper;
 
 $bucket = Common::getBucketName();
 
