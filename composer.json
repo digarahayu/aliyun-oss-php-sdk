@@ -1,6 +1,6 @@
 {
-    "name": "aliyuncs/oss-sdk-php",
-    "description": "Aliyun OSS SDK for PHP",
+    "name": "jefri/oss-sdk-php",
+    "description": "Aliyun OSS SDK for PHP that have progress callback",
     "homepage": "http://www.aliyun.com/product/oss/",
     "type": "library",
     "license": "MIT",
